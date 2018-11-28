@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.util.Scanner;
 
 /**
  *  Class to have an inteface between the application and the user.
@@ -23,24 +24,38 @@ public final class App {
      */
     public static void main(final String[] args) {
         Console c = System.console();
+        Scanner scanner  = new Scanner(System.in);
+        String input = "";
+
         String intro = "\n======================="
             + "\n| Welcome to Barathon |"
             + "\n======================= \n";
         System.out.println(intro);
 
-        System.out.print("  user pseudo : ");
-        String pseudo = c.readLine();
+        System.out.print("Enter Username: ");
+        input = scanner.next();
+        input += scanner.nextLine();
+        String pseudo  = input;
         System.out.println(String.format("  Hello %s !\n", pseudo));
 
         System.out.print("  ! Can we use your actual position ? [Y/n] :");
-        boolean bpos = "Yy ".indexOf(c.readLine()) >= 0;
+        input = scanner.next();
+        input += scanner.nextLine();
+        System.out.println(pseudo);
+
+        boolean bpos = "Yy ".indexOf(input) >= 0;
         Double x = 0.0;
         Double y = 0.0;
         if (bpos) {
             System.out.print("  Position (x) : ");
-            x = new Double(c.readLine());
+            input = scanner.next();
+            input += scanner.nextLine();
+            x = new Double(input);
+
             System.out.print("  Position (y) : ");
-            y = new Double(c.readLine());
+            input = scanner.next();
+            input += scanner.nextLine();
+            y = new Double(input);
         } else {
             x = UNKNOWN_POSITION;
             y = UNKNOWN_POSITION;
@@ -50,14 +65,20 @@ public final class App {
 
         System.out.println("\n --- Choose Preferencies --- \n");
         System.out.print("  - Cheap [Y/n]: ");
-        //String cheap = c.readLine();
-        boolean cheap = "Yy ".indexOf(c.readLine()) >= 0;
+        //String cheap =
+        input = scanner.next();
+        input += scanner.nextLine();
+        boolean cheap = "Yy ".indexOf(input) >= 0;
         System.out.print("  - Music [Y/n]: ");
         //String music = c.readLine();
-        boolean music = "Yy ".indexOf(c.readLine()) >= 0;
+        input = scanner.next();
+        input += scanner.nextLine();
+        boolean music = "Yy ".indexOf(input) >= 0;
         System.out.print("  - Alcohol [Y/n]: ");
         //String alcohol = c.readLine();
-        boolean alcohol = "Yy ".indexOf(c.readLine()) >= 0;
+        input = scanner.next();
+        input += scanner.nextLine();
+        boolean alcohol = "Yy ".indexOf(input) >= 0;
 
         System.out.println(String.format("\n  You choosed : %s %s %s \n",
          cheap, music, alcohol));
@@ -69,10 +90,14 @@ public final class App {
         System.out.println("\n --- Choose Type of Search --- \n");
         System.out.print("  - Trip [Y/n]: ");
         //String trip = c.readLine();
-        boolean trip = "Yy ".indexOf(c.readLine()) >= 0;
+        input = scanner.next();
+        input += scanner.nextLine();
+        boolean trip = "Yy ".indexOf(input) >= 0;
         System.out.print("  - Radius: ");
         //String trip = c.readLine();
-        int radius = Integer.parseInt(c.readLine());
+        input = scanner.next();
+        input += scanner.nextLine();
+        int radius = Integer.parseInt(input);
 
         System.out.println(String.format("\n  You choosed : %s %d\n",
          trip, radius));
