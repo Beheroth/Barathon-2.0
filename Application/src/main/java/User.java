@@ -14,7 +14,7 @@ public class User {
      */
     private ArrayList<Place> bars;
     /**
-     * list of bars.
+     * list of trips.
      */
     private ArrayList<Place> trips;
     /**
