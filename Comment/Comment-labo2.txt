@@ -1,0 +1,25 @@
+Labo 2: 24/10/2018
+
+strategy -> different algo pour faire la meme chose,
+nous ont different probleme -> peut etre pas strategy  / Si algo est recherché des bars alors, le design pattern strategy peut fonctionner
+
+il ya plusieurs roles -> plusieurs interface ? differents points d'entrees ? (app/client) et (gestion server/admin)
+
+Algo return liste de bars -> definir l'ordre des bars (bar optimal et parcours de bars)
+
+caractéristic du place est une classe donnée -> une classe à du sens que s'il y a du comportement !! / classe interne public (peut etre interressant)
+-> rajouter une methode match et alors la classe séparée est intérréssante, on peut la garder séparer
+
+classe DBaccess bizarre pas attaché, ajouter la classe interface et systeme pour avoir le point d'entré
+
+-----------------
+
+format des commentaires pour tous semblable -> il faut des commentaires qui sont tous semblables
+
+qu'est ce que la partie logique ?? -> Il faudra spécifier
+
+----------------
+
+ce qu'il faut pour une phase 1 -> Feu vert
+
+mettre en place github, une branch par personne, un gerant master (fixé un check par semaine)
