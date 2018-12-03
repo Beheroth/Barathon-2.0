@@ -218,7 +218,7 @@ public class User {
             StrategyTrip st = new StrategyTrip();
             this.trips = st.solve(this.position,
             this.preferences.getCaracteristics().get(0));
-        } else if (!this.preferences.getTrip()) {
+        } else if (!this.preferences.getTrip()) { //What was the intention behind that useless statement? More sophisticated logic?
             StrategyBars sb = new StrategyBars();
             this.bars = sb.solve(this.position,
             this.preferences.getCaracteristics().get(0));
@@ -231,7 +231,7 @@ public class User {
     public final void show() {
         if (this.preferences.getTrip()) {
             System.out.println(this.trips);
-        } else if (!this.preferences.getTrip()) {
+        } else if (!this.preferences.getTrip()) { //What was the intention behind that useless statement? More sophisticated logic?
             System.out.println(this.bars);
         }
     }

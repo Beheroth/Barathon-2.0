@@ -1,32 +1,53 @@
-Groupe 2: Christophe, Jean, Jordan et Maxime
+﻿Groupe 2: Christophe, Jean, Jordan et Maxime
+
 
 Consignes:
-- 10-15 classes
+
+	- 10-15 classes
+	
 - Au moins 1 design pattern
+	
 - En ligne de commandes ou avec une interface, ou autre (à discuter)
 
+
 Documents requis:
+	
 - Courte description du projet et du problème qu'il résout
+	
 - Réaliser un diagramme des cas d'utilisation et un diagramme de classes
+	
 - Choisir une convention de codage existante ou non
-- Choisir un (ou plusieurs) critères de qualité et les métriques pour les mesurer
+
+	- Choisir un (ou plusieurs) critères de qualité et les métriques pour les mesurer
+
 
 Langage utilisé: Java
+
 Versions utilisées: OpenJDK 8
+
 Système utilisé: Linux 64 bits
 
+
 Conventions de codage: https://www.havelund.com/Publications/jpl-java-standard.pdf (NASA)
+
 Conventions de nommage: http://www.loribel.com/java/normes/nommage.html
 
+
 Critères de qualité (4-6):
-- Couverture du code de 70% pour la partie logique
+
+	- Couverture du code de 70% pour la partie logique
+	
 - Itinéraire en moins de 30s pour la création d'un iténéraire sur mobile (au moins 4GB de RAM)
-- Pourcentage de commentaires entre 20 et 30%
+
+	- Pourcentage de commentaires entre 20 et 30%
+
 NB: L'important de cette partie sera de critiquer nos résultats par rapport à nos attentes.
+
 
 Métriques pour mesurer la qualité de code:
 - ?
 - ?
 ... ?
+
 
 Utilisation de(s) design pattern(s): strategy
