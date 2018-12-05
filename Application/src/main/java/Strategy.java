@@ -7,9 +7,8 @@ interface Strategy {
     /**
      *  Method solve.
      *
-     * @param p position of the user.
-     * @param c carcateristics of the user.
+     * @param u user to search from.
      * @return list of places.
      */
-    ArrayList<Place> solve(Position p, Caracteristics c);
+    ArrayList<Place> solve(User u);
 }
