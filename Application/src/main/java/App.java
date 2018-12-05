@@ -17,21 +17,10 @@ public final class App {
     **/
     private static final Double UNKNOWN_POSITION = 666.0;
 
-    /**
-     *  Method main.
-     *
-     * @param args Args of main function
-     */
-    public static void main(final String[] args) {
+    private static User cheap_interface(){
         Console c = System.console();
         Scanner scanner  = new Scanner(System.in);
         String input = "";
-
-        String intro = "\n======================="
-            + "\n| Welcome to Barathon |"
-            + "\n======================= \n";
-        System.out.println(intro);
-
         System.out.print("  Please enter your username: ");
         input = scanner.next();
         input += scanner.nextLine();
@@ -80,7 +69,7 @@ public final class App {
         boolean alcohol = "Yy ".indexOf(input) >= 0;
 
         System.out.println(String.format("\n  You chose : %s %s %s \n",
-         cheap, music, alcohol));
+                cheap, music, alcohol));
         Caracteristics car = new Caracteristics();
         car.setCheap(cheap);
         car.setMusic(music);
@@ -99,15 +88,28 @@ public final class App {
         int radius = Integer.parseInt(input);
 
         System.out.println(String.format("\n  You chose : %s %d\n",
-         trip, radius));
+                trip, radius));
         Preferences pref = new Preferences();
         pref.addCaracteristics(car);
         pref.setTrip(trip);
         pref.setRadius(radius);
 
         // Create user
-        User user = new User(pseudo, pos, pref);
+        return new User(pseudo, pos, pref);
+    }
+    /**
+     *  Method main.
+     *
+     * @param args Args of main function
+     */
+    public static void main(final String[] args) {
 
+        String intro = "\n======================="
+                + "\n| Welcome to Barathon |"
+                + "\n======================= \n";
+        System.out.println(intro);
+
+        User user = cheap_interface();
         //To do: run Search
         user.generate();
 
