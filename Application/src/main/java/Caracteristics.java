@@ -2,9 +2,9 @@
  * Class to represent the caracteristics.
  */
  public class Caracteristics {
-   /**
-    * carcateristic cheap.
-    */
+    /**
+     * carcateristic cheap.
+     */
     private boolean cheap;
     /**
      * carcateristic music.
@@ -37,7 +37,6 @@
 
     /**
      * Method to generate the caracteristics.
-     *
      */
     public Caracteristics() {
         this.cheap = false;
@@ -197,18 +196,18 @@
     /**
      * Method to set the all fields.
      *
-     * @param c a boolean representing the cheap field.
-     * @param m a boolean representing the music field.
+     * @param c  a boolean representing the cheap field.
+     * @param m  a boolean representing the music field.
      * @param fp a boolean representing the famousPlace field.
-     * @param f a boolean representing the food field.
+     * @param f  a boolean representing the food field.
      * @param vg a boolean representing the vegetarian field.
-     * @param h a boolean representing the halal field.
+     * @param h  a boolean representing the halal field.
      * @param vn a boolean representing the vegan field.
-     * @param a a boolean representing the alcohol field.
+     * @param a  a boolean representing the alcohol field.
      */
     public final void set(final boolean c, final boolean m, final boolean fp,
-    final boolean f, final boolean vg, final boolean h, final boolean vn,
-    final boolean a) {
+                          final boolean f, final boolean vg, final boolean h, final boolean vn,
+                          final boolean a) {
         this.cheap = c;
         this.music = m;
         this.famousPlace = fp;
@@ -217,5 +216,26 @@
         this.halal = h;
         this.vegan = vn;
         this.alcohol = a;
+    }
+
+    public final boolean equals(Caracteristics c){
+        if (this.getCheap()  & !c.getCheap()) {
+            return false;
+        } else if(this.getMusic() & !c.getMusic()) {
+            return false;
+        } else if(this.getAlcohol() & !c.getAlcohol()) {
+            return false;
+        } else if(this.getFamousPlace() & !c.getFamousPlace()) {
+            return false;
+        } else if(this.getFood() & !c.getFood()) {
+            return false;
+        } else if(this.getVegetarian() & !c.getVegetarian()) {
+            return false;
+        } else if(this.getVegan() & !c.getVegan()) {
+            return false;
+        } else if(this.getHalal() & !c.getHalal()) {
+            return false;
+        }
+        return true;
     }
 }
