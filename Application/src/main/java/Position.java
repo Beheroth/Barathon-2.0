@@ -75,4 +75,9 @@ public class Position {
             return false;
         }
     }
+
+    public final double getDistanceFrom(Position p){
+        Double d = Math.sqrt(Math.pow(this.getLatitude() - p.getLatitude(), 2) + Math.pow(this.getLongitude() - p.getLongitude(), 2));
+        return d;
+    }
 }
