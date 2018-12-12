@@ -21,6 +21,5 @@ public class PositionTest {
 
         Assert.assertTrue(ar.isEqual(new arraylist<>(pl)));
         Assert.assertFalse(ar.isEqual(new arraylist<>));
-		
 	}
 }
