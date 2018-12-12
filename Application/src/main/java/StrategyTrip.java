@@ -9,31 +9,37 @@ public class StrategyTrip implements Strategy {
      * Method solve.
      *
      * @param u user to search from.
-     * @return list of ordered places.
+     * @return list of places ordered following the nearest neighbour algorithm.
      */
     public final ArrayList<Place> solve(final User u) {
-        Caracteristics c = u.getCurrentCaracteristics();
         Position pos = u.getPosition();
         ArrayList<Place> trip = new ArrayList<Place>();
         //trip = DBAccess.getNearbyPlaces(u);
-        filter(trip, c);
         sort(trip, pos);
-
-        // Take parameters position and carcateristics which match the places.
         return trip;
     }
 
-    private void filter(ArrayList<Place> trip, Caracteristics userCaracteristics) {
-        for (Place place : trip) {
-            Caracteristics placeCaracteristics = place.getCaracteristics();
-            if (!userCaracteristics.equals(placeCaracteristics)) {
-                trip.remove(place);
-            }
-        }
-    }
-
-    private void sort(ArrayList<Place> trip, Position pos) {
+    /**
+     * Method sort.
+     *
+     * @param trip List of places to sort.
+     * @param pos Position of the starting point.
+     * @return List of places sorted following the nearest neighbour algorithm, starting from 'pos'.
+     */
+    private ArrayList<Place> sort(ArrayList<Place> trip, Position pos) {
         ArrayList<Place> sortedtrip = new ArrayList<Place>();
-
+        while(!trip.isEmpty()) {
+            int nearest = 0;
+            for (int i = 1; i < trip.size(); i++) {
+                Position uncheckedpos = trip.get(i).getAddress().getPosition();
+                Position nearestpos = trip.get(nearest).getAddress().getPosition();
+                if (pos.getDistanceFrom(uncheckedpos) < pos.getDistanceFrom(nearestpos)) {
+                    nearest = i;
+                }
+            }
+            sortedtrip.add(trip.get(nearest));
+            trip.remove(nearest);
+        }
+        return sortedtrip;
     }
 }
