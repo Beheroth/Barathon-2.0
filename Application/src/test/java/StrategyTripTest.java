@@ -17,7 +17,7 @@ public class PositionTest {
 	public void TestFilter() {
         InitClasses();
 
-        filter(ar, c)
+        filter(ar, c);
 
         Assert.assertTrue(ar.isEqual(new arraylist<>(pl))));
         Assert.assertFalse(ar.isEqual(new arraylist<>)));
