@@ -7,7 +7,7 @@ public class StrategyTripTest {
 	public Menu m ;
 	public Caracteristics c ;		
 	public Place pl ;
-	ArrayList<Place> ar;
+	public ArrayList<> ar;
 	public Drink d;
 
 	@Before
@@ -24,8 +24,6 @@ public class StrategyTripTest {
 
 	@Test
 	public void TestFilter() {
-        InitClasses();
-
         filter(ar, c);
 
         Assert.assertTrue(ar.isEqual(new arraylist<>(pl)));

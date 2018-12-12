@@ -9,7 +9,7 @@ public class PlaceTest {
 	public Menu m ;
 	public Caracteristics c ;		
 	public Place pl ;
-	ArrayList<Place> ar;
+	public ArrayList<> ar;
 	public Drink d;
 
 	@Before
@@ -26,7 +26,6 @@ public class PlaceTest {
 
 
 	@Test
-
 	public void TestUpdateCaracteristics() {
 		c.updateCaracteristics(true, false, false, false, false, false, false, false);
 		Assert.assertEquals(1, c.getCheap());
