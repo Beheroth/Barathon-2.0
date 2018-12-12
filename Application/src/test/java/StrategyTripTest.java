@@ -20,7 +20,7 @@ public class PositionTest {
         filter(ar, c);
 
         Assert.assertTrue(ar.isEqual(new arraylist<>(pl)));
-        Assert.assertFalse(ar.isEqual(new arraylist<>)));
+        Assert.assertFalse(ar.isEqual(new arraylist<>));
 		
 	}
 }
