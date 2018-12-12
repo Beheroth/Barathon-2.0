@@ -6,7 +6,7 @@ public class FoodTest {
 	@Test
 	public void TestGetVegan() {
 
-		Assert.assertTrue((new Food("Food", 10, true, true, true)).getVegan());
+	Assert.assertTrue((new Food("Food", 10, true, true, true)).getVegan());
         Assert.assertTrue((new Food("Food", 10, true, true, false)).getVegan());
         Assert.assertTrue((new Food("Food", 10, true, false, true)).getVegan());
         Assert.assertTrue((new Food("Food", 10, true, false, false)).getVegan());
@@ -35,7 +35,7 @@ public class FoodTest {
     	@Test
 	public void TestGetVegetarian() {
 
-		Assert.assertTrue((new Food("Food", 10, true, true, true)).getVegetarian());
+	Assert.assertTrue((new Food("Food", 10, true, true, true)).getVegetarian());
         Assert.assertFalse((new Food("Food", 10, true, true, false)).getVegetarian());
         Assert.assertTrue((new Food("Food", 10, true, false, true)).getVegetarian());
         Assert.assertFalse((new Food("Food", 10, true, false, false)).getVegetarian());
