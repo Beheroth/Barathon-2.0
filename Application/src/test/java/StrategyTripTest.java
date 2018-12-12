@@ -3,7 +3,7 @@ import org.junit.*;
 public class StrategyTripTest {
 
 	public Position p;
-	public Adress a ;
+	public Address a ;
 	public Menu m ;
 	public Caracteristics c ;		
 	public Place pl ;
