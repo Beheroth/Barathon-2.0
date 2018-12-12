@@ -7,11 +7,10 @@ public class StrategyTripTest {
 	public Menu m ;
 	public Caracteristics c ;		
 	public Place pl ;
-	public ArrayList<Place> ar;
+	ArrayList<Place> ar;
 	public Drink d;
 
 	@Before
-
 	public void InitClasses() {
 		p = new Position(16.38, 48.25);
 		a = new Address("Rue du barathon", "10", p );
