@@ -9,7 +9,7 @@ public class PlaceTest {
 	public Menu m ;
 	public Caracteristics c ;		
 	public Place pl ;
-	public ArrayList<> ar;
+	public ArrayList<Place> ar;
 	public Drink d;
 
 	@Before
