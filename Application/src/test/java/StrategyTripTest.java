@@ -1,6 +1,6 @@
 import org.junit.*;
 
-public class PositionTest {
+public class StrategyTripTest {
 
     public void InitClasses() {
 		p = new Position(16.38, 48.25);
