@@ -4,6 +4,14 @@ import org.junit.Test;
 
 public class PlaceTest {
 
+	public Position p;
+	public Address a ;
+	public Menu m ;
+	public Caracteristics c ;		
+	public Place pl ;
+	public ArrayList<Place> ar;
+	public Drink d;
+
 	@Before
 
 	public void InitClasses() {
