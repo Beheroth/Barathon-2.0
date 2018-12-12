@@ -66,6 +66,20 @@ public class Menu {
     }
 
     /**
+     * Returns if the menu contains any food
+     *
+     * @return boolean weither the menu contains any food
+     */
+    public final boolean hasFood() { return !getFoods().isEmpty(); }
+
+    /**
+     * Returns if the menu contains any drink
+     *
+     * @return boolean weither the menu contains any food
+     */
+    public final boolean hasDrink() { return !getDrinks().isEmpty(); }
+
+    /**
     * This method adds a food to the menu.
     *
     * @param f Food to be added.

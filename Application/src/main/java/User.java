@@ -26,7 +26,7 @@ public class User {
      */
     private Preferences preferences;
     /**
-     * user's choice.
+     * user's choice. Index of the chosen caracteristic
      */
     private int choice;
 
@@ -216,12 +216,10 @@ public class User {
         this.clearList();
         if (this.preferences.getTrip()) {
             StrategyTrip st = new StrategyTrip();
-            this.trips = st.solve(this.position,
-            this.preferences.getCaracteristics().get(0));
-        } else if (!this.preferences.getTrip()) {
+            this.trips = st.solve(this);
+        } else if (!this.preferences.getTrip()) { //What was the intention behind that useless statement? More sophisticated logic?
             StrategyBars sb = new StrategyBars();
-            this.bars = sb.solve(this.position,
-            this.preferences.getCaracteristics().get(0));
+            this.bars = sb.solve(this);
         }
     }
 
@@ -231,7 +229,7 @@ public class User {
     public final void show() {
         if (this.preferences.getTrip()) {
             System.out.println(this.trips);
-        } else if (!this.preferences.getTrip()) {
+        } else if (!this.preferences.getTrip()) { //What was the intention behind that useless statement? More sophisticated logic?
             System.out.println(this.bars);
         }
     }
@@ -268,5 +266,9 @@ public class User {
             }
         }
         return null;
+    }
+
+    public Caracteristics getCurrentCaracteristics(){
+        return this.preferences.getCaracteristics().get(getChoice());
     }
 }
