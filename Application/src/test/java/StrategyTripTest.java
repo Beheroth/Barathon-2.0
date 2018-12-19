@@ -1,4 +1,5 @@
 import org.junit.*;
+import java.util.ArrayList;
 
 public class StrategyTripTest {
 
@@ -7,7 +8,7 @@ public class StrategyTripTest {
 	public Menu m ;
 	public Caracteristics c ;		
 	public Place pl ;
-	public ArrayList<Place> ar = new ArrayList<Place>();
+	public ArrayList<Place> ar;
 	public Drink d;
 
 	@Before
@@ -18,7 +19,7 @@ public class StrategyTripTest {
 		c = new Caracteristics();
 		c.set(false, false, false, false, false, false, false, false);
 		pl = new Place(1, "Bar quelconque", a, m, c);
-		ar.append(pl);
+		ar = new ArrayList<Place>(pl);
 		d = new Drink("Boisson soft", 2, 0, true);
 	}
 
