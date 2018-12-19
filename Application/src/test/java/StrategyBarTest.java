@@ -37,6 +37,5 @@ public class StrategyBarTest {
         sb.solve(u);
         result =  u.getTrips();
         Assert.assertTrue(result.isEmpty());
-        Assert.assertFalse(result.isEmpty());
     }
 }
