@@ -18,7 +18,7 @@ public class StrategyTripTest {
 		c = new Caracteristics();
 		c.set(false, false, false, false, false, false, false, false);
 		pl = new Place(1, "Bar quelconque", a, m, c);
-		ar = new ArrayList<>(pl);
+		ar = new ArrayList<Place>(pl);
 		d = new Drink("Boisson soft", 2, 0, true);
 	}
 
