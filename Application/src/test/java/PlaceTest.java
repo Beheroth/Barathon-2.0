@@ -28,9 +28,9 @@ public class PlaceTest {
 
 
 	@Test
-	public void TestUpdateCaracteristics() {
+	public void TestsetCaracteristics() {
 		c.set(true, false, false, false, false, false, false, false);
-		Assert.assertEquals(1, c.getCheap());
+		Assert.assertEquals(true, c.getCheap());
 	}
 /*
 	@Test
