@@ -212,12 +212,11 @@ public class User {
      *  Method to generate the lists via the search algorithm.
      */
     public final void generate() {
-        //to implement
         this.clearList();
         if (this.preferences.getTrip()) {
             StrategyTrip st = new StrategyTrip();
             this.trips = st.solve(this);
-        } else if (!this.preferences.getTrip()) { //What was the intention behind that useless statement? More sophisticated logic?
+        } else if (!this.preferences.getTrip()) {
             StrategyBars sb = new StrategyBars();
             this.bars = sb.solve(this);
         }

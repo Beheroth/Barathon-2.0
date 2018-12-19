@@ -11,9 +11,26 @@ public class StrategyBars implements Strategy {
    * @return list of places.
    */
     public final ArrayList<Place> solve(final User u) {
-        ArrayList<Place> lst = new ArrayList<Place>();
-        // Takes the parameter position and returns all the bars that in 100km.
-        // around the position.
-        return lst;
+        Caracteristics c = u.getCurrentCaracteristics();
+        ArrayList<Place> trip = new ArrayList<Place>();
+        //trip = DBAccess.getNearbyPlaces(u);
+        filter(trip, c);
+        return trip;
+    }
+
+    /**
+     * Method sort.
+     *
+     * @param trip List of places to filter.
+     * @param userCaracteristics Caracteristics specified by the user.
+     * @return List of places that match the userCaracteristics.
+     */
+    private void filter(ArrayList<Place> trip, Caracteristics userCaracteristics) {
+        for (Place place : trip) {
+            Caracteristics placeCaracteristics = place.getCaracteristics();
+            if (!userCaracteristics.equals(placeCaracteristics)) {
+                trip.remove(place);
+            }
+        }
     }
 }
