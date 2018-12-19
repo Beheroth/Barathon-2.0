@@ -246,7 +246,7 @@ public final class DBAccess {
           System.out.println(String.format("Caracteristic %s created: OK", field));
         }
       } catch (Exception e) {
-        System.out.println("An error occured during the caracteristics creation !");
+        System.out.println("An error occurred during the caracteristics creation !");
         System.out.println(e);
       }
       driver.close();
@@ -273,7 +273,7 @@ public final class DBAccess {
         rs = session.run(String.format("MATCH (p:Place {id: %d})-[r]-(c:Caracteristic {name: '%s'}) SET r.status = '%b'", place.getId(), "cheap", carac.getCheap()));
       }
     } catch (Exception e) {
-      System.out.println("An error occured during the Place-cheap relationship creation !");
+      System.out.println("An error occurred during the Place-cheap relationship creation !");
       System.out.print(e);
     }
     driver.close();
@@ -329,7 +329,7 @@ public final class DBAccess {
         rs = session.run(String.format("MATCH (p:Place {id: %d})-[r]-(c:Caracteristic {name: '%s'}) SET r.status='%b'", place.getId(), "vegetarian", carac.getVegetarian()));
       }
     } catch (Exception e) {
-      System.out.println("An error occured during the Place-vegetarian relationship creation !");
+      System.out.println("An error occurred during the Place-vegetarian relationship creation !");
       System.out.print(e);
     }
     driver.close();

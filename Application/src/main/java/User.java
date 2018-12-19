@@ -227,9 +227,9 @@ public class User {
      */
     public final void show() {
         if (this.preferences.getTrip()) {
-            System.out.println(this.trips);
+            System.out.println("You should visit these places in this order" + this.trips +"\n");
         } else if (!this.preferences.getTrip()) {
-            System.out.println(this.bars);
+            System.out.println("These places match yout preferences:" + this.bars + "\n");
         }
     }
 
