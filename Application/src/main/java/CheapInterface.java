@@ -82,12 +82,15 @@ public class CheapInterface {
     /**
      *  Sets the currentPlace attribute.
      *
-     * @param place, the Place object the CheapInterface shall use.
+     * @param place the Place object the CheapInterface shall use.
      */
     public void setCurrentPlace(Place place) {
         this.currentPlace = place;
     }
 
+    /**
+     * Regroups elements to display a basic user interface.
+     */
     CheapInterface(){
         this.c = System.console();
         this.s  = new Scanner(System.in);
@@ -96,6 +99,9 @@ public class CheapInterface {
         this.commands.add("LookAround");
     }
 
+    /**
+     *  Asks the user what he would like to do.
+     */
     public void ask_task(){
         String input = "";
         String output = "What would you like to do: ";
@@ -115,6 +121,9 @@ public class CheapInterface {
         }
     }
 
+    /**
+     *  Asks and retrieve information to create a new User object.
+     */
     private User newUser() {
         String input = "";
         System.out.print("  --CREATING NEW USER--\n");
@@ -156,6 +165,9 @@ public class CheapInterface {
         return user;
     }
 
+    /**
+     *  Asks and retrieve information to create a new Preference object.
+     */
     private Preferences newPreferences(){
         System.out.println("\n --- Set your Preferences --- \n");
         System.out.print("    - Cheap [Y/n]: ");
@@ -203,6 +215,9 @@ public class CheapInterface {
         return pref;
     }
 
+    /**
+     * Displays bars following the currentUser's preferences.
+     */
     private void lookAround(){
         if(getCurrentUser() == null){
             newUser();
@@ -210,7 +225,5 @@ public class CheapInterface {
         getCurrentUser().generate();
         getCurrentUser().show();
     }
-
-
 }
 
