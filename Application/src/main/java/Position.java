@@ -1,5 +1,5 @@
 /**
- * Class to represent the position.
+ * Class to represent a two coordinates position.
  */
 public class Position {
     /**
@@ -76,7 +76,12 @@ public class Position {
         }
     }
 
-    public final double getDistanceFrom(Position p){
+    /**
+     * Computes the distance between two positions?
+     * @param p Position to compare to.
+     * @return The distance between two positions as a double.
+     */
+    public final double getDistanceFrom(final Position p) {
         Double d = Math.sqrt(Math.pow(this.getLatitude() - p.getLatitude(), 2) + Math.pow(this.getLongitude() - p.getLongitude(), 2));
         return d;
     }
