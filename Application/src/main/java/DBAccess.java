@@ -1,9 +1,6 @@
 // imports
-import org.neo4j.driver.v1.Driver;
-import org.neo4j.driver.v1.GraphDatabase;
-import org.neo4j.driver.v1.AuthTokens;
-import org.neo4j.driver.v1.Session;
-import org.neo4j.driver.v1.StatementResult;
+import org.neo4j.driver.v1.*;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -26,15 +23,15 @@ public final class DBAccess {
   /**
    * ip address.
    */
-  private static String ip = "localhost:7687";
+  private static String ip = "81.244.81.95:7687";
   /**
-   * login.
+   * Login.
    */
   private static String login = "neo4j";
   /**
-   * password.
+   * Password.
    */
-  private static String password = "NEO4J";
+  private static String password = "mesa4!";
 
   /**
    * Method to connect to the database.
@@ -557,7 +554,6 @@ public final class DBAccess {
 
   /**
    * Method to drop the database.
-   *
    */
   public static void dropDatabase() {
     Driver driver = connect();
@@ -569,5 +565,38 @@ public final class DBAccess {
       System.out.print(e);
     }
     driver.close();
+    }
+
+    /**
+     * Method to get an array list of x bars in a radius y of the user (complex).
+     *
+     * @param user object user.
+     * @param x size of list.
+     * @return an array list of places.
+     */
+    public static ArrayList<Place> getNearbyPlaces(final User user, final int x) {
+        int y = user.getPreferences().getRadius();
+        ArrayList<Place> places = new ArrayList<Place>();
+        Driver driver = DBAccess.connect();
+        try (Session session = driver.session()) {
+            StatementResult rs = session.run(String.format("MATCH (u:User {pseudo: '%s'})-[r:AWAY]-(p:Place) WHERE r.distance <= %d RETURN p.id AS id, r.distance AS distance ORDER BY r.distance LIMIT %d", user.getPseudo(), y, x));
+            List<Record> ids = rs.list();
+            if (!ids.isEmpty()) {
+                ArrayList<Place> dbPlaces = JSONAccess.readPlacesJSON("../data/places.json");
+                for (Record i : ids) {
+                    // To find the places in the JSON with record.get("id")
+                    Place place = Place.findPlace(dbPlaces, i.get("id").asInt());
+                    places.add(place);
+                }
+            } else {
+                System.out.println("There is no place where it is possible to eat in the database !");
+            }
+        } catch (Exception e) {
+            System.out.println("An error occured during the places where it is possible to eat searching !");
+        }
+        driver.close();
+        // To print for the test
+        System.out.println(places);
+        return places;
     }
 }

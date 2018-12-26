@@ -13,7 +13,7 @@ public class StrategyBars implements Strategy {
     public final ArrayList<Place> solve(final User u) {
         Caracteristics c = u.getCurrentCaracteristics();
         ArrayList<Place> trip = new ArrayList<Place>();
-        //trip = DBAccess.getNearbyPlaces(u);
+        trip = DBAccess.getNearbyPlaces(u, 10);
         filter(trip, c);
         return trip;
     }

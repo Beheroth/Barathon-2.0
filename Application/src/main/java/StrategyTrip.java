@@ -13,7 +13,7 @@ public class StrategyTrip implements Strategy {
     public final ArrayList<Place> solve(final User u) {
         Position pos = u.getPosition();
         ArrayList<Place> trip = new ArrayList<Place>();
-        //trip = DBAccess.getNearbyPlaces(u);
+        trip = DBAccess.getNearbyPlaces(u, 10);
         sort(trip, pos);
         return trip;
     }
