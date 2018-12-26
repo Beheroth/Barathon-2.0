@@ -124,7 +124,7 @@ public class CheapInterface {
     /**
      *  Asks the user what he would like to do.
      */
-     public final void askTask() {
+    public final void askTask() {
         String input = "";
         String output = "What would you like to do: ";
         for (String command: commands) {
@@ -145,8 +145,11 @@ public class CheapInterface {
 
     /**
      *  Asks and retrieve information to create a new User object.
-     *
      *  @return newly created User object.
+     *
+     *  TODO: Handle case where pseudo is already taken
+     *  TODO: Handle case where input is not parsable to double
+     *  TODO: Implement DBAccess
      */
     private User newUser() {
         String input = "";
@@ -155,7 +158,6 @@ public class CheapInterface {
         input = s.next();
         input += s.nextLine();
         String pseudo = input;
-        //TODO: Handle case where pseudo is already taken
         System.out.print("    ! Can we use your actual position ? [Y/n] :");
         input = s.next();
         input += s.nextLine();
@@ -168,13 +170,11 @@ public class CheapInterface {
             input = s.next();
             input += s.nextLine();
             x = new Double(input);
-            //TODO: Handle case where input is not parsable to double
 
             System.out.print("    Position (y): ");
             input = s.next();
             input += s.nextLine();
             y = new Double(input);
-            //TODO: Handle case where input is not parsable to double
 
         } else {
             x = UNKNOWN_POSITION;
@@ -184,7 +184,6 @@ public class CheapInterface {
         Preferences pref = this.newPreferences();
         User user = new User(pseudo, pos, pref);
         //DBAccess.createUser(user);
-        //TODO: Implement DBAccess
         setCurrentUser(user);
         return user;
     }
