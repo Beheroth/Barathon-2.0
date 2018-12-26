@@ -22,7 +22,7 @@ public class Menu {
     private int meanFoodPrice;
 
     /**
-    * Constructor.
+    * Constructor, instantiate a Menu object.
     */
     public Menu() {
         this.foods = new ArrayList<Food>();
@@ -66,18 +66,22 @@ public class Menu {
     }
 
     /**
-     * Returns if the menu contains any food
+     * Returns if the menu contains any food.
      *
-     * @return boolean weither the menu contains any food
+     * @return boolean whether the menu contains any food
      */
-    public final boolean hasFood() { return !getFoods().isEmpty(); }
+    public final boolean hasFood() {
+        return !getFoods().isEmpty();
+    }
 
     /**
-     * Returns if the menu contains any drink
+     * Returns if the menu contains any drink.
      *
-     * @return boolean weither the menu contains any food
+     * @return boolean whether the menu contains any food
      */
-    public final boolean hasDrink() { return !getDrinks().isEmpty(); }
+    public final boolean hasDrink() {
+        return !getDrinks().isEmpty();
+    }
 
     /**
     * This method adds a food to the menu.

@@ -1,8 +1,3 @@
-import java.io.Console;
-import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.Scanner;
-
 /**
  *  Class to have an inteface between the application and the user.
  */
@@ -25,7 +20,7 @@ public final class App {
                 + "\n======================= \n";
         System.out.println(intro);
         CheapInterface cheapInterface = new CheapInterface();
-        while(true){
+        while (true) {
             cheapInterface.askTask();
         }
     }
