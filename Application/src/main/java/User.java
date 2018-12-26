@@ -227,7 +227,7 @@ public class User {
      */
     public final void show() {
         if (this.preferences.getTrip()) {
-            System.out.println("You should visit these places in this order" + this.trips +"\n");
+            System.out.println("You should visit these places in this order" + this.trips + "\n");
         } else if (!this.preferences.getTrip()) {
             System.out.println("These places match yout preferences:" + this.bars + "\n");
         }
@@ -267,7 +267,11 @@ public class User {
         return null;
     }
 
-    public Caracteristics getCurrentCaracteristics(){
+    /**
+     * Gets the Caracteristics pointed by the "choice" object attribute.
+     * @return The chosen Caracteristics pointed by the "choice" cursor from the preferences array attribute.
+     */
+    public Caracteristics getCurrentCaracteristics() {
         return this.preferences.getCaracteristics().get(getChoice());
     }
 }
