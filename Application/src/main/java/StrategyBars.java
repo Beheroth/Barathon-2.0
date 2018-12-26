@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Class to find the bars.
+ * Class to implements a research strategy based on bars preferences.
  */
 public class StrategyBars implements Strategy {
   /**
@@ -23,9 +23,8 @@ public class StrategyBars implements Strategy {
      *
      * @param trip List of places to filter.
      * @param userCaracteristics Caracteristics specified by the user.
-     * @return List of places that match the userCaracteristics.
      */
-    private void filter(ArrayList<Place> trip, Caracteristics userCaracteristics) {
+    private void filter(final ArrayList<Place> trip, final Caracteristics userCaracteristics) {
         for (Place place : trip) {
             Caracteristics placeCaracteristics = place.getCaracteristics();
             if (!userCaracteristics.equals(placeCaracteristics)) {
