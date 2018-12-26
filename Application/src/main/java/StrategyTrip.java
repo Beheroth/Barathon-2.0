@@ -1,4 +1,3 @@
-// import
 import java.util.ArrayList;
 
 /**
@@ -26,9 +25,9 @@ public class StrategyTrip implements Strategy {
      * @param pos Position of the starting point.
      * @return List of places sorted following the nearest neighbour algorithm, starting from 'pos'.
      */
-    private ArrayList<Place> sort(ArrayList<Place> trip, Position pos) {
+    private ArrayList<Place> sort(final ArrayList<Place> trip,final Position pos) {
         ArrayList<Place> sortedtrip = new ArrayList<Place>();
-        while(!trip.isEmpty()) {
+        while (!trip.isEmpty()) {
             int nearest = 0;
             for (int i = 1; i < trip.size(); i++) {
                 Position uncheckedpos = trip.get(i).getAddress().getPosition();
