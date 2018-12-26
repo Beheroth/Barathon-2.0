@@ -97,7 +97,7 @@ public class CheapInterface {
      *
      * @return currentPlace, the Place attribute.
      */
-    final public Place getCurrentPlace() {
+    public final Place getCurrentPlace() {
         return currentPlace;
     }
 
@@ -106,7 +106,7 @@ public class CheapInterface {
      *
      * @param place the Place object the CheapInterface shall use.
      */
-    final public void setCurrentPlace(final Place place) {
+    public final void setCurrentPlace(final Place place) {
         this.currentPlace = place;
     }
 
@@ -124,7 +124,7 @@ public class CheapInterface {
     /**
      *  Asks the user what he would like to do.
      */
-    final public void askTask() {
+     public final void askTask() {
         String input = "";
         String output = "What would you like to do: ";
         for (String command: commands) {
