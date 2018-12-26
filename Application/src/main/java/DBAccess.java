@@ -181,6 +181,12 @@ public final class DBAccess {
         try (Session session = driver.session()) {
             StatementResult rs = session.run(String.format("CREATE (:User {pseudo: '%s', longitude: %s, latitude: %s})", user.getPseudo(), user.getPosition().getLongitude(), user.getPosition().getLatitude()));
             System.out.println(String.format("User %s creation: OK", user.getPseudo()));
+            DBAccess.matchUser(user);
+            DBAccess.createU2CRelationship(user, user.getPreferences().getCaracteristics().get(0));
+            ArrayList<Place> places = findPlaces();
+            for (Place place: places) {
+                DBAccess.createU2PRelationship(user, place);
+            }
         } catch (Exception e) {
             System.out.println("An error occured during the user creation !");
             System.out.print(e);

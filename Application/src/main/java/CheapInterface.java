@@ -183,7 +183,7 @@ public class CheapInterface {
         Position pos = new Position(x, y);
         Preferences pref = this.newPreferences();
         User user = new User(pseudo, pos, pref);
-        //DBAccess.createUser(user);
+        DBAccess.createUser(user);
         setCurrentUser(user);
         return user;
     }
