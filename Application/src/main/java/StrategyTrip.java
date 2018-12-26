@@ -25,7 +25,7 @@ public class StrategyTrip implements Strategy {
      * @param pos Position of the starting point.
      * @return List of places sorted following the nearest neighbour algorithm, starting from 'pos'.
      */
-    private ArrayList<Place> sort(final ArrayList<Place> trip,final Position pos) {
+    private ArrayList<Place> sort(final ArrayList<Place> trip, final Position pos) {
         ArrayList<Place> sortedtrip = new ArrayList<Place>();
         while (!trip.isEmpty()) {
             int nearest = 0;

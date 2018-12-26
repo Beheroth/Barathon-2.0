@@ -271,7 +271,7 @@ public class User {
      * Gets the Caracteristics pointed by the "choice" object attribute.
      * @return The chosen Caracteristics pointed by the "choice" cursor from the preferences array attribute.
      */
-    public Caracteristics getCurrentCaracteristics() {
+    final public Caracteristics getCurrentCaracteristics() {
         return this.preferences.getCaracteristics().get(getChoice());
     }
 }
