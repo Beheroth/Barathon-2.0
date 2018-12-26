@@ -15,37 +15,77 @@ public class CheapInterface {
     private User currentUser;
     private Place currentPlace;
 
+    /**
+     *  Gets the Console attribute.
+     *
+     * @return c, the console attribute.
+     */
     private Console getC() {
         return c;
     }
 
+    /**
+     *  Sets the Console attribute.
+     *
+     * @param c The Console object the CheapInterface shall use.
+     */
     private void setC(Console c) {
         this.c = c;
     }
 
+    /**
+     *  Gets the Scanner attribute.
+     *
+     *  @return s, the Scanner attribute.
+     */
     private Scanner getS() {
         return s;
     }
 
+    /**
+     *  Sets the Scanner attribute.
+     *
+     * @param s The Scanner object the CheapInterface shall use.
+     */
     private void setS(Scanner s) {
         this.s = s;
     }
 
+    /**
+     *  Gets the currentUser attribute.
+     *
+     * @return currentUser, the User attribute.
+     */
     private User getCurrentUser() {
         return currentUser;
     }
 
-    private void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
+    /**
+     *  Sets the currentUser attribute.
+     *
+     * @param user The User object the CheapInterface shall use.
+     */
+    private void setCurrentUser(User user) {
+        this.currentUser = user;
         System.out.print(String.format("  User as been set to %s\n", currentUser.getPseudo()));
     }
 
+    /**
+     *  Gets the currentPlace attribute.
+     *
+     * @return currentPlace, the Place attribute.
+     */
     public Place getCurrentPlace() {
         return currentPlace;
     }
 
-    public void setCurrentPlace(Place currentPlace) {
-        this.currentPlace = currentPlace;
+    /**
+     *  Sets the currentPlace attribute.
+     *
+     * @param place, the Place object the CheapInterface shall use.
+     */
+    public void setCurrentPlace(Place place) {
+        this.currentPlace = place;
     }
 
     CheapInterface(){
