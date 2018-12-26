@@ -4,15 +4,39 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Regroups elements to display a basic user interface.
+ */
 public class CheapInterface {
 
+    /**
+     * Default coordinate in case the user doesn't specify it.
+     */
     private static final Double UNKNOWN_POSITION = 666.0;
 
+    /**
+     * Console object the CheapInterface uses to display outputs.
+     */
     private Console c;
+
+    /**
+     * Scanner object the Cheapinterface uses to retrieve inputs.
+     */
     private Scanner s;
+
+    /**
+     * List of known commands.
+     */
     private ArrayList<String> commands;
 
+    /**
+     * Stores the User object to retrieve informations from.
+     */
     private User currentUser;
+
+    /**
+     * Stores the Place object to retrieve informations from.
+     */
     private Place currentPlace;
 
     /**
@@ -89,7 +113,7 @@ public class CheapInterface {
     }
 
     /**
-     * Regroups elements to display a basic user interface.
+     * Instantiate a CheapInterface object.
      */
     CheapInterface(){
         this.c = System.console();
@@ -123,6 +147,8 @@ public class CheapInterface {
 
     /**
      *  Asks and retrieve information to create a new User object.
+     *
+     *  @return newly created User object.
      */
     private User newUser() {
         String input = "";
@@ -167,6 +193,8 @@ public class CheapInterface {
 
     /**
      *  Asks and retrieve information to create a new Preference object.
+     *
+     * @return newly created Preference object.
      */
     private Preferences newPreferences(){
         System.out.println("\n --- Set your Preferences --- \n");
