@@ -26,7 +26,7 @@ public final class App {
         System.out.println(intro);
         CheapInterface cheapInterface = new CheapInterface();
         while(true){
-            cheapInterface.ask_task();
+            cheapInterface.askTask();
         }
     }
 }

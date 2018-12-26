@@ -1,7 +1,5 @@
 import java.io.Console;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -51,10 +49,10 @@ public class CheapInterface {
     /**
      *  Sets the Console attribute.
      *
-     * @param c The Console object the CheapInterface shall use.
+     * @param console The Console object the CheapInterface shall use.
      */
-    private void setC(Console c) {
-        this.c = c;
+    private void setC(final Console console) {
+        this.c = console;
     }
 
     /**
@@ -69,10 +67,10 @@ public class CheapInterface {
     /**
      *  Sets the Scanner attribute.
      *
-     * @param s The Scanner object the CheapInterface shall use.
+     * @param scanner The Scanner object the CheapInterface shall use.
      */
-    private void setS(Scanner s) {
-        this.s = s;
+    private void setS(final Scanner scanner) {
+        this.s = scanner;
     }
 
     /**
@@ -89,7 +87,7 @@ public class CheapInterface {
      *
      * @param user The User object the CheapInterface shall use.
      */
-    private void setCurrentUser(User user) {
+    private void setCurrentUser(final User user) {
         this.currentUser = user;
         System.out.print(String.format("  User as been set to %s\n", currentUser.getPseudo()));
     }
@@ -108,14 +106,14 @@ public class CheapInterface {
      *
      * @param place the Place object the CheapInterface shall use.
      */
-    public void setCurrentPlace(Place place) {
+    public void setCurrentPlace(final Place place) {
         this.currentPlace = place;
     }
 
     /**
      * Instantiate a CheapInterface object.
      */
-    CheapInterface(){
+    CheapInterface() {
         this.c = System.console();
         this.s  = new Scanner(System.in);
         this.commands = new ArrayList<String>();
@@ -126,7 +124,7 @@ public class CheapInterface {
     /**
      *  Asks the user what he would like to do.
      */
-    public void ask_task(){
+    public void askTask() {
         String input = "";
         String output = "What would you like to do: ";
         for (String command: commands) {
@@ -136,9 +134,9 @@ public class CheapInterface {
         input = s.next();
         input += s.nextLine();
         String command  = input;
-        if (command.equals("NewUser")){
+        if (command.equals("NewUser")) {
             newUser();
-        } else if (command.equals("LookAround")){
+        } else if (command.equals("LookAround")) {
             lookAround();
         } else {
             System.out.print(String.format("  Command unknown: %s \n", command));
@@ -196,7 +194,7 @@ public class CheapInterface {
      *
      * @return newly created Preference object.
      */
-    private Preferences newPreferences(){
+    private Preferences newPreferences() {
         System.out.println("\n --- Set your Preferences --- \n");
         System.out.print("    - Cheap [Y/n]: ");
 
@@ -246,8 +244,8 @@ public class CheapInterface {
     /**
      * Displays bars following the currentUser's preferences.
      */
-    private void lookAround(){
-        if(getCurrentUser() == null){
+    private void lookAround() {
+        if (getCurrentUser() == null) {
             newUser();
         }
         getCurrentUser().generate();
