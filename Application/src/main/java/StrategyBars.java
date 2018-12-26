@@ -27,7 +27,7 @@ public class StrategyBars implements Strategy {
     private void filter(final ArrayList<Place> trip, final Caracteristics userCaracteristics) {
         for (Place place : trip) {
             Caracteristics placeCaracteristics = place.getCaracteristics();
-            if (!userCaracteristics.equals(placeCaracteristics)) {
+            if (!userCaracteristics.isEqual(placeCaracteristics)) {
                 trip.remove(place);
             }
         }

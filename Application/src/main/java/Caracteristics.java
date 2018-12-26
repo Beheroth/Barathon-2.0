@@ -223,7 +223,7 @@
      * @param c Caracteristic to compare to.
      * @return Whether or not the c Caracteristics is the same as this Caracteristic object.
      */
-    public final boolean equals(final Caracteristics c) {
+    public final boolean isEqual(final Caracteristics c) {
         if (this.getCheap()  & !c.getCheap()) {
             return false;
         } else if (this.getMusic() & !c.getMusic()) {
@@ -243,4 +243,4 @@
         }
         return true;
     }
-}
+ }
