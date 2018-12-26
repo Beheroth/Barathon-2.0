@@ -218,22 +218,27 @@
         this.alcohol = a;
     }
 
-    public final boolean equals(Caracteristics c){
+    /**
+     * Compares the Caracteristic object to the Caracteristic c parameter.
+     * @param c Caracteristic to compare to.
+     * @return Whether or not the c Caracteristics is the same as this Caracteristic object.
+     */
+    public final boolean equals(final Caracteristics c) {
         if (this.getCheap()  & !c.getCheap()) {
             return false;
-        } else if(this.getMusic() & !c.getMusic()) {
+        } else if (this.getMusic() & !c.getMusic()) {
             return false;
-        } else if(this.getAlcohol() & !c.getAlcohol()) {
+        } else if (this.getAlcohol() & !c.getAlcohol()) {
             return false;
-        } else if(this.getFamousPlace() & !c.getFamousPlace()) {
+        } else if (this.getFamousPlace() & !c.getFamousPlace()) {
             return false;
-        } else if(this.getFood() & !c.getFood()) {
+        } else if (this.getFood() & !c.getFood()) {
             return false;
-        } else if(this.getVegetarian() & !c.getVegetarian()) {
+        } else if (this.getVegetarian() & !c.getVegetarian()) {
             return false;
-        } else if(this.getVegan() & !c.getVegan()) {
+        } else if (this.getVegan() & !c.getVegan()) {
             return false;
-        } else if(this.getHalal() & !c.getHalal()) {
+        } else if (this.getHalal() & !c.getHalal()) {
             return false;
         }
         return true;
