@@ -4,8 +4,6 @@ import java.util.ArrayList;
  * Class to implements a research strategy based on bars preferences.
  */
 public class StrategyBars implements Strategy {
-  
-  public static final int num = 10;
   /**
    *  Method solve.
    *
@@ -15,7 +13,7 @@ public class StrategyBars implements Strategy {
     public final ArrayList<Place> solve(final User u) {
         Caracteristics c = u.getCurrentCaracteristics();
         ArrayList<Place> trip = new ArrayList<Place>();
-        trip = DBAccess.getNearbyPlaces(u, num);
+        trip = DBAccess.getNearbyPlaces(u, 10);
         filter(trip, c);
         return trip;
     }
