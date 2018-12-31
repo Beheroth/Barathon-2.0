@@ -11,9 +11,10 @@ public class StrategyBars implements Strategy {
    * @return list of places.
    */
     public final ArrayList<Place> solve(final User u) {
+        num= 10;
         Caracteristics c = u.getCurrentCaracteristics();
         ArrayList<Place> trip = new ArrayList<Place>();
-        trip = DBAccess.getNearbyPlaces(u, 10);
+        trip = DBAccess.getNearbyPlaces(u, num);
         filter(trip, c);
         return trip;
     }
