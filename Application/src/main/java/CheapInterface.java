@@ -146,10 +146,6 @@ public class CheapInterface {
     /**
      *  Asks and retrieve information to create a new User object.
      *  @return newly created User object.
-     *
-     *  TODO: Handle case where pseudo is already taken
-     *  TODO: Handle case where input is not parsable to double
-     *  TODO: Implement DBAccess
      */
     private User newUser() {
         String input = "";
