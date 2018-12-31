@@ -11,9 +11,10 @@ public class StrategyTrip implements Strategy {
      * @return list of places ordered following the nearest neighbour algorithm.
      */
     public final ArrayList<Place> solve(final User u) {
+        num= 10;
         Position pos = u.getPosition();
         ArrayList<Place> trip = new ArrayList<Place>();
-        trip = DBAccess.getNearbyPlaces(u, 10);
+        trip = DBAccess.getNearbyPlaces(u, num);
         sort(trip, pos);
         return trip;
     }
