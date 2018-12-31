@@ -4,6 +4,8 @@ import java.util.ArrayList;
  * Class to find the trip of bars.
  */
 public class StrategyTrip implements Strategy {
+    
+    public static final int num = 10;
     /**
      * Method solve.
      *
@@ -11,7 +13,6 @@ public class StrategyTrip implements Strategy {
      * @return list of places ordered following the nearest neighbour algorithm.
      */
     public final ArrayList<Place> solve(final User u) {
-        int num= 10;
         Position pos = u.getPosition();
         ArrayList<Place> trip = new ArrayList<Place>();
         trip = DBAccess.getNearbyPlaces(u, num);
